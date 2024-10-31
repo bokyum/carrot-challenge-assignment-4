@@ -9,7 +9,7 @@ const SkeletonCard = () => {
         <p className="h-2 mt-2 bg-slate-200 rounded w-[80%]"></p>
         <p className="h-2 mt-2 bg-slate-200 rounded w-[40%]"></p>
         <p className="h-2 mt-2 bg-slate-200 rounded"></p>
-        <p className="h-2 mt-2 bg-slate-200 rounded w-[80%]"></p>
+        <p className="h-2 my-2 bg-slate-200 rounded w-[80%]"></p>
       </div>
     </div>
   );

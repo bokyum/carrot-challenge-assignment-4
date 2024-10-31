@@ -1,16 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-export const API_URL = "https://billions-api.nomadcoders.workers.dev";
-
-export const getBillion = (num: number) => {
-  "use client";
-  return Math.round(num / 1000);
-};
 
 const getBillionaries = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch(API_URL);
+  const response = await fetch("https://billions-api.nomadcoders.workers.dev");
 
   if (response.status === 200) {
     return response.json();
@@ -25,7 +18,8 @@ export default async function Home() {
     <div className="pt-12">
       <div className="flex items-center justify-center m-10">
         <div className="grid grid-cols-4 gap-4">
-          {billionaries.map((billionare: any) => (
+          {/* @ts-expect-error interface 정의 필요 */}
+          {billionaries.map((billionare) => (
             <Link key={billionare.id} href={`/person/${billionare.id}`}>
               <div
                 className="@apply max-w-60 h-full  bg-slate-800 border-2 border-slate-800 hover:transition hover:scale-105 hover:cursor-pointer hover:border-slate-500"
@@ -43,11 +37,11 @@ export default async function Home() {
                     <div>hi</div>
                   )}
                 </div>
-                <div className="p-2">
+                <div className="p-2 text-slate-200">
                   <p className="text-lg font-semibold">{billionare.name}</p>
-                  <p className="text-sm pt-1">{`${getBillion(
-                    billionare.netWorth
-                  )} Billion / ${billionare.industries.join(" & ")}`}</p>
+                  <p className="text-sm pt-1">{`${
+                    Math.round(billionare.netWorth) / 1000
+                  } Billion / ${billionare.industries.join(" & ")}`}</p>
                 </div>
               </div>
             </Link>

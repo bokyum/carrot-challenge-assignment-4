@@ -75,7 +75,7 @@ export default async function PersonDetail({ params }: { params: Params }) {
         <Container>
           <div className="my-4 mb-8">
             <h1 className="text-2xl text-white ">Financial Assets</h1>
-            <div className="mt-4 grid grid-cols-4 gap-2">
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
               {/* @ts-expect-error interface 정의 필요  */}
               {person.financialAssets?.map((asset, idx: number) => (
                 <div

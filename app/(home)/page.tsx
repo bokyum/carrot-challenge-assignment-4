@@ -16,8 +16,8 @@ const getBillionaries = async () => {
 export default async function Home() {
   const billionaries = await getBillionaries();
   return (
-    <div className="pt-12">
-      <div className="flex items-center justify-center m-10">
+    <div className="pt-[4.125rem] sm:pt-12">
+      <div className="flex items-center justify-center m-2 2sm:m-6 sm:m-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {/* @ts-expect-error interface 정의 필요 */}
           {billionaries.map((billionare) => (

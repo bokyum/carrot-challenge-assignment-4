@@ -40,9 +40,9 @@ export default async function Home() {
                 </div>
                 <div className="p-2 text-slate-200">
                   <p className="text-lg font-semibold">{billionare.name}</p>
-                  <p className="text-sm pt-1">{`${
-                    Math.round(billionare.netWorth) / 1000
-                  } Billion / ${billionare.industries.join(" & ")}`}</p>
+                  <p className="text-sm pt-1">{`${Math.round(
+                    billionare.netWorth / 1000
+                  )} Billion / ${billionare.industries.join(" & ")}`}</p>
                 </div>
               </div>
             </Link>

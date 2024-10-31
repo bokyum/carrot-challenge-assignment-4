@@ -52,7 +52,7 @@ export default async function PersonDetail({ params }: { params: Params }) {
                 {person.name ?? "UNKOWN"}
               </div>
               <div>{`Network: ${
-                person.netWorth ? Math.round(person.netWorth) / 1000 : "UNKOWN"
+                person.netWorth ? Math.round(person.netWorth / 1000) : "UNKOWN"
               } Billion`}</div>
               <div>{`Country: ${person.country ?? "UNKOWN"}`}</div>
               <div>{`Industry: ${

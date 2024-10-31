@@ -10,7 +10,6 @@ const getPersonDetailById = async (id: string) => {
   const response = await fetch(
     `https://billions-api.nomadcoders.workers.dev/person/${id}`
   );
-  console.log(response);
 
   if (response.status === 200) return response.json();
   else return notFound();

@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <div className="pt-12">
       <div className="flex items-center justify-center m-10">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {/* @ts-expect-error interface 정의 필요 */}
           {billionaries.map((billionare) => (
             <Link key={billionare.id} href={`/person/${billionare.id}`}>

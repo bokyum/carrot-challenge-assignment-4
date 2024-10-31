@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { PhotoIcon } from "@heroicons/react/24/solid";
+import { UserIcon } from "@heroicons/react/24/solid";
 
 const getBillionaries = async () => {
   const response = await fetch("https://billions-api.nomadcoders.workers.dev");
@@ -35,7 +35,7 @@ export default async function Home() {
                       alt={billionare.name}
                     />
                   ) : (
-                    <PhotoIcon className="w-full" />
+                    <UserIcon className="w-full" />
                   )}
                 </div>
                 <div className="p-2 text-slate-200">

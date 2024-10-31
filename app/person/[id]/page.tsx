@@ -1,4 +1,5 @@
 import Container from "@/app/components/container";
+import { UserIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -38,12 +39,12 @@ export default async function PersonDetail({ params }: { params: Params }) {
           <div className="flex flex-row gap-4">
             <div className="w-60">
               <div className="relative aspect-square">
-                <Image
-                  src={person.squareImage}
-                  fill
-                  alt={person.name}
-                  className="object-cover border-2 border-slate-900"
-                />
+                {person.squareImage &&
+                !person.squareImage.includes("undefined") ? (
+                  <Image fill src={person.squareImage} alt={person.name} />
+                ) : (
+                  <UserIcon className="w-full" />
+                )}
               </div>
             </div>
             <div className="flex flex-col gap-2">

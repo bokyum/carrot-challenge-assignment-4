@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { UserIcon } from "@heroicons/react/24/solid";
+import { Metadata } from "next";
 
 const getBillionaries = async () => {
   const response = await fetch("https://billions-api.nomadcoders.workers.dev");
@@ -11,6 +12,10 @@ const getBillionaries = async () => {
   } else {
     notFound();
   }
+};
+
+export const metadata: Metadata = {
+  title: "Home",
 };
 
 export default async function Home() {
